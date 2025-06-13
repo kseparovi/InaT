@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   // Glatko skrolanje na sekcije
   const scrollLinks = document.querySelectorAll('a.nav-link');
@@ -100,3 +101,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('InaT site ready.');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+
+  if (!localStorage.getItem('cookiesAccepted')) {
+    banner.classList.remove('d-none');
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    banner.classList.add('d-none');
+  });
+});
+
+//Cookie banner wit accept and decline buttons
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+
+  // Provjeri ako je korisnik već dao izbor
+  const consent = localStorage.getItem('cookieConsent');
+
+  if (!consent) {
+    banner.classList.remove('d-none');
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    banner.classList.add('d-none');
+    enableAnalytics(); // pokreni GA ili druge skripte
+  });
+
+  declineBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    banner.classList.add('d-none');
+  });
+
+  // Ako je korisnik već prihvatio kolačiće, aktiviraj analitiku
+  if (consent === 'accepted') {
+    enableAnalytics();
+  }
+
+  function enableAnalytics() {
+    // primjer uključivanja Google Analytics-a
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX';
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // zamijeni svojim GA ID-em
+  }
+});
+

@@ -40,7 +40,10 @@
         "telephone": "+38512345678",
         "contactType": "Customer Support",
         "areaServed": "HR",
-        "availableLanguage": ["English", "Croatian"]
+        "availableLanguage": [
+          "English",
+          "Croatian"
+        ]
       }
     }
   </script>
@@ -48,7 +51,7 @@
   <title>InaT | Web Development Agency</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" href="/img/inat-logo.png" type="image/png">
+  <link rel="icon" href="/media/inat-logo.png" type="image/png">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -64,7 +67,9 @@
             <stop offset="100%" stop-color="#eaf0f2"/>
           </linearGradient>
         </defs>
-        <text x="0" y="40" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="url(#inatGradient)">InaT</text>
+        <text x="0" y="40" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="url(#inatGradient)">
+          InaT
+        </text>
       </svg>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -88,14 +93,14 @@
 
 <section class="hero d-flex align-items-center justify-content-center text-center text-white">
   <video class="hero-bg-video" autoplay muted loop playsinline>
-    <source src="/img/CG0021_MatrixBlueJP.mp4" type="video/mp4">
+    <source src="/media/CG0021_MatrixBlueJP.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="hero-overlay"></div>
   <div class="container">
     <h1 class="display-3 fw-bold mb-3">We build solutions that drive business.</h1>
-    <p class="lead mb-4">From concept to deployment – professional websites and custom platforms.</p>
-    <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-2">Get in Touch</a>
+    <p class="lead mb-4">From idea to execution – professional web development and custom platforms.</p>
+    <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-2">Contact us</a>
   </div>
 </section>
 
@@ -103,9 +108,30 @@
   <div class="container">
     <h2 class="section-title text-center mb-5">Our Services</h2>
     <div class="row g-4">
-      <div class="col-md-4"><div class="card border-0 shadow-sm h-100"><div class="card-body"><h5 class="card-title">Website Development</h5><p class="card-text">Modern, responsive websites tailored to your business goals and brand.</p></div></div></div>
-      <div class="col-md-4"><div class="card border-0 shadow-sm h-100"><div class="card-body"><h5 class="card-title">E-commerce Solutions</h5><p class="card-text">Robust eCommerce platforms designed for scalability and conversions.</p></div></div></div>
-      <div class="col-md-4"><div class="card border-0 shadow-sm h-100"><div class="card-body"><h5 class="card-title">Custom Applications</h5><p class="card-text">Tailor-made web apps that streamline your business processes.</p></div></div></div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Website Development</h5>
+            <p class="card-text">Modern, responsive websites tailored to your business goals and brand.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">E-commerce</h5>
+            <p class="card-text">Robust eCommerce solutions designed for scalability and conversion optimization.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Custom Solutions</h5>
+            <p class="card-text">Tailor-made web applications that streamline your business processes.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -113,18 +139,46 @@
 <section id="about" class="py-5 bg-light animate-on-scroll">
   <div class="container">
     <h2 class="section-title text-center mb-4">About Us</h2>
-    <p class="text-center mx-auto" style="max-width: 800px;">InaT is a specialized web development agency dedicated to delivering high-quality, scalable, and SEO-optimized digital products. Our mission is to help businesses grow online with reliable technologies.</p>
+    <p class="text-center mx-auto" style="max-width: 800px;">
+      InaT is a modern digital agency specializing in web development, professional websites, e-commerce, and custom digital solutions. We help companies of all sizes create a functional, scalable, and visually appealing online presence.
+      Our approach combines technical expertise with user-centered design to deliver products that achieve real results.
+    </p>
   </div>
 </section>
 
 <section id="contact" class="py-5 bg-dark text-white animate-on-scroll">
   <div class="container">
     <h2 class="section-title text-center mb-4">Contact</h2>
+    <br>
+    <br>
+
+    <div class="text-center mb-4">
+      <h5 class="fw-bold">Schedule a meeting with us</h5>
+      <p class="mb-1">
+        Phone: <a href="tel:+385955170512" class="text-white text-decoration-underline">+385 95 517 0512</a>
+      </p>
+      <p class="mb-0">
+        Address: <a href="https://www.google.com/maps?q=Admirala+Jakova+Šubića+od+Cezana+25e,+Zadar" target="_blank"
+                   class="text-white text-decoration-underline">
+        Admirala Jakova Šubića od Cezana 25e, 23000 Zadar
+      </a>
+      </p>
+    </div>
+    <br>
+
     <form id="contactForm" method="POST" class="mx-auto" style="max-width: 600px;">
+      <div class="text-center mb-4">
+        <h5 class="fw-bold">Contact us via email</h5>
+      </div>
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" required>
       </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Last Name </label>
+            <input type="text" class="form-control" name="last name" required>
+        </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" name="email" required>
@@ -134,18 +188,37 @@
         <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
       </div>
       <input type="text" name="_gotcha" style="display:none">
-      <button type="submit" class="btn btn-outline-light">Send Message</button>
+      <div class="text-center mb-4">
+        <button type="submit" class="btn btn-outline-light">Send Message</button>
+      </div>
     </form>
   </div>
 </section>
 
 <footer class="text-center py-4 bg-light">
   <div class="container">
-    <p class="mb-0">&copy; 2025 InaT. All rights reserved.</p>
+    <p class="mb-0">
+      &copy; 2025 InaT. All rights reserved.
+      <a href="/politika_privatnost_eng.html" class="ms-2 text-muted">Privacy Policy</a>
+    </p>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/js/main.js" defer></script>
+
+<div id="cookie-banner" class="cookie-banner bg-dark text-white p-3 fixed-bottom d-none">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <p class="mb-0">
+      We use cookies to improve your experience.
+      <a href="#privacy-policy" class="text-white text-decoration-underline">Learn more</a>
+    </p>
+    <div class="d-flex gap-2">
+      <button id="accept-cookies" class="btn btn-outline-light btn-sm">Accept all</button>
+      <button id="decline-cookies" class="btn btn-outline-light btn-sm">Decline</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
