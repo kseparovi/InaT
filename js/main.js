@@ -54,16 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animatedElements.forEach(el => observer.observe(el));
 
-  // Ukloni white flash pri reloadu
-  document.body.classList.add('loaded');
-
-  console.log('InaT site ready.');
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
+  // Kontakt forma - Formspree integracija
   const contactForm = document.getElementById('contactForm');
-
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault(); // Spriječi reload
@@ -102,5 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   }
-});
 
+  // Ukloni white flash pri reloadu
+  document.body.classList.add('loaded');
+
+  console.log('InaT site ready.');
+});

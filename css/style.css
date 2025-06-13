@@ -14,36 +14,6 @@ body {
   overflow: hidden;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-footer {
-  background-color: #f8f9fa;
-  padding: 40px 0;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.hero-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.3; /* prilagodi po potrebi */
-}
-
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
 .hero-bg-video {
   position: absolute;
   top: 0;
@@ -60,11 +30,56 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 32, 39, 0.75); /* tamnija nijansa, prozirna */
+  background: rgba(15, 32, 39, 0.75);
   z-index: 1;
 }
 
 .hero .container {
   position: relative;
-  z-index: 2; /* iznad overlaya */
+  z-index: 2;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1.display-3 {
+    font-size: 2rem;
+  }
+
+  .hero p.lead {
+    font-size: 1rem;
+  }
+
+  .navbar-brand img {
+    height: 30px;
+  }
+
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
 }
