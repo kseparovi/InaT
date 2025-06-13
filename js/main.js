@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Animacija elemenata pri scrollu
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
-
   animatedElements.forEach(el => {
     el.style.opacity = 0;
     el.style.transform = 'translateY(40px) scale(0.98)';
@@ -53,123 +52,105 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   animatedElements.forEach(el => observer.observe(el));
-// Contact form - Formspree integration
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
 
-    const formData = new FormData(contactForm);
+  // Kontakt forma - Formspree integracija
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    fetch('https://formspree.io/f/xjkrwlzj', {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-      .then(response => {
-        if (response.ok) {
-          contactForm.reset();
+      const formData = new FormData(contactForm);
+
+      fetch('https://formspree.io/f/xjkrwlzj', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (response.ok) {
+            contactForm.reset();
+            Swal.fire({
+              title: 'Hvala!',
+              text: 'Vaša poruka je uspješno poslana.',
+              icon: 'success',
+              confirmButtonText: 'Zatvori',
+              background: '#1a1a1a',
+              color: '#eaf0f2',
+              confirmButtonColor: '#447486',
+              iconColor: '#2f6479',
+              customClass: {
+                popup: 'rounded-4 shadow'
+              },
+              timer: 2500,
+              timerProgressBar: true
+            });
+          } else {
+            return response.json().then(data => {
+              throw new Error(data.error || 'Slanje poruke nije uspjelo.');
+            });
+          }
+        })
+        .catch(error => {
           Swal.fire({
-            title: 'Thank you!',
-            text: 'Your message has been sent successfully.',
-            icon: 'success',
-            confirmButtonText: 'Close',
+            title: 'Greška!',
+            text: error.message || 'Došlo je do problema pri slanju. Pokušajte ponovno.',
+            icon: 'error',
+            confirmButtonText: 'U redu',
             background: '#1a1a1a',
             color: '#eaf0f2',
-            confirmButtonColor: '#447486',
-            iconColor: '#2f6479',
+            confirmButtonColor: '#a94442',
+            iconColor: '#dc3545',
             customClass: {
               popup: 'rounded-4 shadow'
             }
           });
-        } else {
-          return response.json().then(data => {
-            throw new Error(data.error || 'Message sending failed.');
-          });
-        }
-      })
-      .catch(error => {
-        Swal.fire({
-          title: 'Error',
-          text: error.message || 'An error occurred.',
-          icon: 'error',
-          confirmButtonText: 'Try again',
-          background: '#1a1a1a',
-          color: '#eaf0f2',
-          confirmButtonColor: '#a94442',
-          iconColor: '#dc3545',
-          customClass: {
-            popup: 'rounded-4 shadow'
-          }
         });
-      });
-  });
-}
-
-  // Ukloni white flash pri reloadu
-  document.body.classList.add('loaded');
-
-  console.log('InaT site ready.');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const banner = document.getElementById('cookie-banner');
-  const acceptBtn = document.getElementById('accept-cookies');
-
-  if (!localStorage.getItem('cookiesAccepted')) {
-    banner.classList.remove('d-none');
+    });
   }
 
-  acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
-    banner.classList.add('d-none');
-  });
-});
-
-//Cookie banner wit accept and decline buttons
-document.addEventListener('DOMContentLoaded', () => {
+  // Cookie banner s prihvaćanjem/odbijanjem
   const banner = document.getElementById('cookie-banner');
   const acceptBtn = document.getElementById('accept-cookies');
   const declineBtn = document.getElementById('decline-cookies');
-
-  // Provjeri ako je korisnik već dao izbor
   const consent = localStorage.getItem('cookieConsent');
 
   if (!consent) {
     banner.classList.remove('d-none');
   }
 
-  acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'accepted');
-    banner.classList.add('d-none');
-    enableAnalytics(); // pokreni GA ili druge skripte
-  });
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.classList.add('d-none');
+      enableAnalytics();
+    });
+  }
 
-  declineBtn.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    banner.classList.add('d-none');
-  });
+  if (declineBtn) {
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'declined');
+      banner.classList.add('d-none');
+    });
+  }
 
-  // Ako je korisnik već prihvatio kolačiće, aktiviraj analitiku
   if (consent === 'accepted') {
     enableAnalytics();
   }
 
   function enableAnalytics() {
-    // primjer uključivanja Google Analytics-a
     const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX'; // zamijeni s pravim GA ID
     script.async = true;
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // zamijeni svojim GA ID-em
+    gtag('config', 'G-XXXXXXX');
   }
-});
 
+  // White flash fix
+  document.body.classList.add('loaded');
+
+  console.log('InaT site ready.');
+});
