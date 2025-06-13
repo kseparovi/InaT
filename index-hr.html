@@ -1,135 +1,226 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="InaT - Profesionalna agencija za web razvoj: web stranice, webshopovi i prilagođena rješenja." />
-  <meta name="keywords" content="InaT, web razvoj, web dizajn, webshop, IT agencija" />
-  <meta name="author" content="InaT Web Agencija" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description"
+        content="InaT - Profesionalna agencija za web razvoj koja nudi web stranice, webshopove i prilagođena IT rješenja za poslovanja."/>
+  <meta name="keywords"
+        content="InaT, web razvoj, web dizajn, webshop, prilagođena IT rješenja, responzivne web stranice, SEO agencija"/>
+  <meta name="author" content="InaT Web Agencija"/>
+  <link rel="canonical" href="https://inat.hr/index-hr.html"/>
+
+  <!-- Open Graph za dijeljenje na društvenim mrežama -->
+  <meta property="og:title" content="InaT | Agencija za Web Razvoj"/>
+  <meta property="og:description"
+        content="Profesionalne web stranice, webshopovi i digitalna rješenja za rast vašeg poslovanja."/>
+  <meta property="og:image" content="https://inat.hr/img/inat-logo.png"/>
+  <meta property="og:url" content="https://inat.hr/"/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Twitter Card meta podaci -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="InaT | Agencija za Web Razvoj"/>
+  <meta name="twitter:description"
+        content="Profesionalne web stranice, webshopovi i digitalna rješenja za rast vašeg poslovanja."/>
+  <meta name="twitter:image" content="https://inat.hr/img/inat-logo.png"/>
+
+  <!-- Schema.org strukturirani podaci -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "InaT Web Agencija",
+      "url": "https://inat.hr",
+      "logo": "https://inat.hr/img/inat-logo.png",
+      "sameAs": [
+        "https://www.facebook.com/yourpage",
+        "https://www.linkedin.com/company/inat",
+        "https://www.instagram.com/inatweb"
+      ],
+      "description": "InaT je profesionalna agencija za web razvoj koja nudi prilagođene web stranice, webshopove i digitalna rješenja.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+38512345678",
+        "contactType": "Korisnička podrška",
+        "areaServed": "HR",
+        "availableLanguage": [
+          "Croatian",
+          "English"
+        ]
+      }
+    }
+  </script>
+
   <title>InaT | Agencija za Web Razvoj</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
   <link rel="icon" href="/img/inat-logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="/img/inat-logo.png">
+  <link rel="apple-touch-icon" href="/img/inat-logo-hr.png">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    @media (max-width: 768px) {
+      h1.display-3 {
+        font-size: 2rem;
+      }
+
+      .hero p.lead {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 30px;
+      }
+
+      .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .card-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="/img/inat-logo.png" alt="InaT Logo" height="40">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link text-light" href="#services">Usluge</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="#about">O nama</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="#contact">Kontakt</a></li>
-          <li class="nav-item">
-            <div class="form-check form-switch text-light ms-3">
-              <input class="form-check-input" type="checkbox" role="switch" id="langSwitch">
-              <label class="form-check-label" for="langSwitch">EN</label>
-            </div>
-          </li>
-        </ul>
+<header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <svg width="200" height="80" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="InaT logo">
+        <defs>
+          <linearGradient id="inatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#eaf0f2"/>
+            <stop offset="50%" stop-color="#2f6479"/>
+            <stop offset="100%" stop-color="#eaf0f2"/>
+          </linearGradient>
+        </defs>
+        <text x="0" y="40" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="url(#inatGradient)">
+          InaT
+        </text>
+      </svg>
+
+
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- ... ostatak navigacije ... -->
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link text-light" href="#services">Usluge</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#about">O nama</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#contact">Kontakt</a></li>
+        <li class="nav-item">
+          <div class="form-check form-switch text-light ms-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="langSwitch">
+            <label class="form-check-label" for="langSwitch">EN</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="hero d-flex align-items-center justify-content-center text-center text-white animate-on-scroll"
+         style="min-height: 90vh; position: relative; overflow: hidden;">
+
+  <!-- VIDEO -->
+  <video class="hero-bg-video" autoplay muted loop playsinline>
+    <source src="/img/CG0021_MatrixBlueJP.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- OVERLAY -->
+  <div class="hero-overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="container">
+    <h1 class="display-3 fw-bold mb-3">Izgradite svoju digitalnu prisutnost s InaT-om</h1>
+    <p class="lead mb-4">Profesionalne web stranice, webshopovi i prilagođena rješenja za vaše poslovanje.</p>
+    <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-2">Kontaktirajte nas</a>
+  </div>
+</section>
+
+
+
+<section id="services" class="py-5 animate-on-scroll">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Naše usluge</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Izrada web stranica</h5>
+            <p class="card-text">Moderne, responzivne web stranice prilagođene vašim poslovnim ciljevima i brendu.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Webshopovi</h5>
+            <p class="card-text">Robusna eCommerce rješenja dizajnirana za skalabilnost i optimizaciju konverzije.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Prilagođena rješenja</h5>
+            <p class="card-text">Web aplikacije po mjeri koje pojednostavljuju vaše poslovne procese.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section class="hero d-flex align-items-center justify-content-center text-center text-white" style="min-height: 90vh; background: linear-gradient(135deg,#0f2027, #203a43, #2c5364);">
-    <div class="container">
-      <h1 class="display-3 fw-bold mb-3">Izgradite svoju digitalnu prisutnost s InaT-om</h1>
-      <p class="lead mb-4">Profesionalne web stranice, webshopovi i prilagođena rješenja za vaš posao.</p>
-      <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-2">Kontaktirajte nas</a>
-    </div>
-  </section>
+<section id="about" class="py-5 bg-light animate-on-scroll">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">O nama</h2>
+    <p class="text-center mx-auto" style="max-width: 800px;">InaT je specijalizirana agencija za web razvoj posvećena
+      isporuci visokokvalitetnih, skalabilnih i SEO-optimiziranih digitalnih proizvoda. Naš cilj je pomoći poduzećima da
+      rastu online uz tehnologije koje funkcioniraju.</p>
+  </div>
+</section>
 
-  <section id="services" class="py-5">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Naše usluge</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title">Izrada web stranica</h5>
-              <p class="card-text">Moderne, responzivne web stranice prilagođene vašim poslovnim ciljevima i brendu.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title">Webshopovi</h5>
-              <p class="card-text">Robusna eCommerce rješenja dizajnirana za skalabilnost i optimizaciju konverzije.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body">
-              <h5 class="card-title">Prilagođena rješenja</h5>
-              <p class="card-text">Prilagođene web aplikacije za optimizaciju vaših poslovnih procesa.</p>
-            </div>
-          </div>
-        </div>
+<section id="contact" class="py-5 bg-dark text-white animate-on-scroll">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">Kontakt</h2>
+    <form id="contactForm" method="POST" class="mx-auto animate-on-scroll" style="max-width: 600px;">
+      <div class="mb-3">
+        <label for="name" class="form-label">Ime</label>
+        <input type="text" class="form-control" id="name" name="name" required>
       </div>
-    </div>
-  </section>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Poruka</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+      </div>
+      <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" class="btn btn-outline-light">Pošalji poruku</button>
+    </form>
+  </div>
+</section>
 
-  <section id="about" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title text-center mb-4">O nama</h2>
-      <p class="text-center mx-auto" style="max-width: 800px;">InaT je posvećena agencija za web razvoj fokusirana na isporuku visokokvalitetnih, skalabilnih i SEO-optimiziranih digitalnih proizvoda. Naš je cilj pomoći poslovanjima da rastu online uz tehnologiju koja djeluje.</p>
-    </div>
-  </section>
+<footer class="text-center py-4 bg-light">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 InaT. Sva prava pridržana.</p>
+  </div>
+</footer>
 
-  <section id="contact" class="py-5 bg-dark text-white">
-    <div class="container">
-      <h2 class="section-title text-center mb-4">Kontakt</h2>
-      <form action="https://formspree.io/f/yourFormID" method="POST" class="mx-auto" style="max-width: 600px;">
-        <div class="mb-3">
-          <label for="name" class="form-label">Ime</label>
-          <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Poruka</label>
-          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-        </div>
-        <input type="text" name="_gotcha" style="display:none">
-        <button type="submit" class="btn btn-outline-light">Pošalji poruku</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="text-center py-4 bg-light">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 InaT. Sva prava pridržana.</p>
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const switcher = document.getElementById("langSwitch");
-      if (!switcher) return;
-
-      // Unchecked means HR, checked means EN
-      switcher.checked = window.location.pathname.includes("index.html") && !window.location.pathname.includes("index-hr.html");
-
-      switcher.addEventListener("change", () => {
-        if (switcher.checked) {
-          window.location.href = "/index.html";
-        } else {
-          window.location.href = "/index-hr.html";
-        }
-      });
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

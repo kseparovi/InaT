@@ -5,9 +5,13 @@ body {
 }
 
 .hero {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
   color: white;
-  padding: 100px 0;
+  overflow: hidden;
 }
 
 .section-title {
@@ -23,4 +27,44 @@ footer {
 .btn-primary {
   background-color: #007bff;
   border-color: #007bff;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.3; /* prilagodi po potrebi */
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 32, 39, 0.75); /* tamnija nijansa, prozirna */
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2; /* iznad overlaya */
 }
