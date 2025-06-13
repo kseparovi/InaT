@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   // Glatko skrolanje na sekcije
   const scrollLinks = document.querySelectorAll('a.nav-link');
@@ -54,47 +53,58 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   animatedElements.forEach(el => observer.observe(el));
+// Contact form - Formspree integration
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  // Kontakt forma - Formspree integracija
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // Spriječi reload
+    const formData = new FormData(contactForm);
 
-      const formData = new FormData(contactForm);
-
-      fetch('https://formspree.io/f/xjkrwlzj', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
-        .then(response => {
-          if (response.ok) {
-            contactForm.reset(); // Očisti formu
-            Swal.fire({
-              title: 'Hvala!',
-              text: 'Vaša poruka je uspješno poslana.',
-              icon: 'success',
-              confirmButtonText: 'Zatvori',
-              timer: 2000,
-              timerProgressBar: true
-            });
-          } else {
-            return response.json().then(data => {
-              throw new Error(data.error || 'Slanje poruke nije uspjelo.');
-            });
-          }
-        })
-        .catch(error => {
+    fetch('https://formspree.io/f/xjkrwlzj', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(response => {
+        if (response.ok) {
+          contactForm.reset();
           Swal.fire({
-            title: 'Greška',
-            text: error.message || 'Došlo je do pogreške.',
-            icon: 'error',
-            confirmButtonText: 'Pokušajte ponovo'
+            title: 'Thank you!',
+            text: 'Your message has been sent successfully.',
+            icon: 'success',
+            confirmButtonText: 'Close',
+            background: '#1a1a1a',
+            color: '#eaf0f2',
+            confirmButtonColor: '#447486',
+            iconColor: '#2f6479',
+            customClass: {
+              popup: 'rounded-4 shadow'
+            }
           });
+        } else {
+          return response.json().then(data => {
+            throw new Error(data.error || 'Message sending failed.');
+          });
+        }
+      })
+      .catch(error => {
+        Swal.fire({
+          title: 'Error',
+          text: error.message || 'An error occurred.',
+          icon: 'error',
+          confirmButtonText: 'Try again',
+          background: '#1a1a1a',
+          color: '#eaf0f2',
+          confirmButtonColor: '#a94442',
+          iconColor: '#dc3545',
+          customClass: {
+            popup: 'rounded-4 shadow'
+          }
         });
-    });
-  }
+      });
+  });
+}
 
   // Ukloni white flash pri reloadu
   document.body.classList.add('loaded');
@@ -153,7 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXX'); // zamijeni svojim GA ID-em
   }
