@@ -84,9 +84,67 @@ footer {
   }
 }
 
+/* Cookie banner stilovi */
 .cookie-banner {
+  background-color: #1a1a1a;
+  color: #eaf0f2;
+  padding: 1rem;
+  border-top: 1px solid #2f6479;
+  font-size: 0.95rem;
   z-index: 9999;
-  transition: transform 0.3s ease;
 }
 
+.cookie-banner a {
+  color: #eaf0f2;
+  text-decoration: underline;
+}
 
+.cookie-banner .btn {
+  border-radius: 50px;
+  font-weight: 500;
+  border-color: #447486;
+  color: #eaf0f2;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.cookie-banner .btn:hover {
+  background-color: #447486;
+  color: #fff;
+}
+
+/* SweetAlert stil */
+.swal2-popup {
+  background-color: #1a1a1a !important;
+  color: #eaf0f2 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.swal2-confirm {
+  background-color: #447486 !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+}
+
+.swal2-icon-success {
+  color: #2f6479 !important;
+}
+
+.swal2-icon-error {
+  color: #dc3545 !important;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand svg {
+    width: 100px;
+    height: auto;
+  }
+}
+section {
+  scroll-margin-top: 80px; /* Visina tvoje navbar-e */
+}
+html {
+  scroll-behavior: smooth;
+}
