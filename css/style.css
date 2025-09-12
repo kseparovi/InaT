@@ -169,3 +169,6 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
     font-size: 0.85rem; /* manja veličina fonta za podnaslove na malim ekranima */
   }
 }
+.anchor-target {
+  scroll-margin-top: 80px; /* test value for your navbar height */
+}

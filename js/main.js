@@ -8,23 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setNavH();
   window.addEventListener('resize', setNavH);
 
-  // Smooth scroll + collapse mobile menu
-  const navCollapse = document.querySelector('.navbar-collapse');
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const hash = a.getAttribute('href');
-      if(!hash || hash==='') return;
-      const target = document.querySelector(hash);
-      if(!target) return;
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-      history.pushState(null,'',hash);
-      if(navCollapse && navCollapse.classList.contains('show')){
-        const inst = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse,{toggle:false});
-        inst.hide();
-      }
-    });
-  });
+
 
   // Language toggle
   const langSwitcher = document.getElementById('langSwitch');
@@ -166,3 +150,33 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('InaT site ready.');
 
 });
+
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const hash = a.getAttribute('href');
+    if (!hash || hash === '#') return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const headerHeight = document.querySelector('header.navbar').offsetHeight;
+    const targetPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+    window.scrollTo({
+      top: targetPos,
+      behavior: 'smooth'
+    });
+
+    history.pushState(null, '', hash);
+
+    // close mobile menu
+    const navCollapse = document.querySelector('.navbar-collapse');
+    if (navCollapse && navCollapse.classList.contains('show')) {
+      const inst = bootstrap.Collapse.getInstance(navCollapse) || new bootstrap.Collapse(navCollapse, { toggle: false });
+      inst.hide();
+    }
+  });
+});
+
