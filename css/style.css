@@ -149,3 +149,15 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
   display: block;
   margin: 0 auto; /* centriraj horizontalno */
 }
+@media (max-width: 768px) {
+  /* Naslovi kartica i podnaslovi tamne boje */
+  .service-card__title,
+  .service-card__sub {
+    color: #000000; /* crna boja */
+  }
+
+  /* Chevron (strelica) tamna boja */
+  .service-card__chev path {
+    stroke: #000000; /* crna linija */
+  }
+}
