@@ -57,25 +57,43 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" href="/media/inat-logo.png" type="image/png">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
-<body>
 
-<!-- HEADER -->
+
+  <script id="cookieyes" type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/096c46b7a7186997fb252ea5/script.js"></script>
+
+
+<body>
 <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-semibold" href="#">InaT</a>
+    <a class="navbar-brand" href="#">
+      <svg class="d-block" style="width: 120px; height: auto;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg"
+           aria-label="InaT logo">
+        <defs>
+          <linearGradient id="inatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#eaf0f2"/>
+            <stop offset="50%" stop-color="#2f6479"/>
+            <stop offset="100%" stop-color="#eaf0f2"/>
+          </linearGradient>
+        </defs>
+        <text x="0" y="40" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="url(#inatGradient)">
+          InaT
+        </text>
+      </svg>
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item"><a class="nav-link text-light" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="#about">About Us</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="#contact">Contact</a></li>
-        <li class="nav-item ms-3">
-          <div class="form-check form-switch text-light">
+        <li class="nav-item"><a class="nav-link text-light" href="#about">About us</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#contact">Contact us</a></li>
+        <li class="nav-item">
+          <div class="form-check form-switch text-light ms-3">
             <input class="form-check-input" type="checkbox" id="langSwitch" checked>
-            <label class="form-check-label" for="langSwitch">EN</label>
+            <label class="form-check-label" for="langSwitch">HR</label>
           </div>
         </li>
       </ul>
