@@ -66,7 +66,7 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 /* ===== Service cards ===== */
 .service-card {
   border-radius: 16px;
-  background: linear-gradient(145deg, #f7f9fb, #e6eef4);
+  background: linear-gradient(145deg, #f7f9fb, #6f7883);
   box-shadow: 0 6px 20px rgba(12,32,39,.06);
   overflow: hidden;
   margin-bottom: 1rem;
