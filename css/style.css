@@ -1,8 +1,21 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
+:root {
+  --nav-h: 64px;
 }
+
+@media (min-width: 992px) {
+  :root { --nav-h: 72px; }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Anchor offset for sticky header */
+.anchor-target { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+/* Section spacing */
+section { padding: 5rem 0; margin: 0 !important; }
+
+/* Base styles */
+body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
 
 .hero {
   position: relative;
@@ -13,138 +26,126 @@ body {
   color: white;
   overflow: hidden;
 }
+.hero-bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index:0; }
+.hero-overlay { position: absolute; inset: 0; width:100%; height:100%; background: rgba(15,32,39,.75); z-index:0; }
+.hero .container { position: relative; z-index: 2; }
 
-.hero-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
+.section-title { font-size: 2.5rem; margin-bottom: 3px; }
+footer { background-color: #f8f9fa; padding: 40px 0; }
+.btn-primary { background-color: #447486; border-color: #447486; }
+
+#langSwitch, .form-check-label[for="langSwitch"] { accent-color: #447486; color: #447486; }
+
+@media (max-width: 768px){
+  h1.display-3 { font-size: 2rem; }
+  .hero p.lead { font-size: 1rem; }
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 32, 39, 0.75);
-  z-index: 1;
+@media (max-width: 576px){
+  .section-title { font-size: 1.5rem; }
 }
 
-.hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-footer {
-  background-color: #f8f9fa;
-  padding: 40px 0;
-}
-
-.btn-primary {
-  background-color: #447486;
-  border-color: #447486;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  h1.display-3 {
-    font-size: 2rem;
-  }
-
-  .hero p.lead {
-    font-size: 1rem;
-  }
-
-  .navbar-brand img {
-    height: 30px;
-  }
-
-  .btn-lg {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .card-title {
-    font-size: 1.1rem;
-  }
-}
-
-/* Cookie banner stilovi */
+/* Cookie banner */
 .cookie-banner {
-  background-color: #1a1a1a;
-  color: #eaf0f2;
-  padding: 1rem;
-  border-top: 1px solid #2f6479;
-  font-size: 0.95rem;
-  z-index: 9999;
+  background: #1a1a1a; color: #eaf0f2; padding: 1rem;
+  border-top: 1px solid #2f6479; font-size: .95rem; z-index: 9999; position: sticky; bottom: 0;
 }
-
-.cookie-banner a {
-  color: #eaf0f2;
-  text-decoration: underline;
-}
-
+.cookie-banner a { color:#eaf0f2; text-decoration: underline; }
 .cookie-banner .btn {
-  border-radius: 50px;
-  font-weight: 500;
-  border-color: #447486;
-  color: #eaf0f2;
-  background-color: transparent;
-  transition: all 0.3s ease;
+  border-radius: 50px; font-weight: 500; border: 1px solid #447486;
+  color:#eaf0f2; background: transparent; transition: .3s;
+}
+.cookie-banner .btn:hover { background: #447486; color: #fff; }
+
+/* SweetAlert */
+.swal2-popup { background:#1a1a1a !important; color:#eaf0f2 !important; border-radius:1rem !important; box-shadow:0 0 20px rgba(0,0,0,.4) !important; }
+.swal2-confirm { background:#447486 !important; border:none !important; color:#fff !important; border-radius:50px !important; }
+.swal2-icon-success { color:#2f6479 !important; }
+.swal2-icon-error { color:#dc3545 !important; }
+
+/* ===== Service cards ===== */
+.service-card {
+  border-radius: 16px;
+  background: linear-gradient(145deg, #f7f9fb, #e6eef4);
+  box-shadow: 0 6px 20px rgba(12,32,39,.06);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: transform .25s ease, box-shadow .3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(12,32,39,.15);
 }
 
-.cookie-banner .btn:hover {
-  background-color: #447486;
-  color: #fff;
+.service-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 100%;
+  transition: background .3s ease;
+}
+.service-card__header:hover { background: rgba(68,116,134,.05); border-radius: 16px 16px 0 0; }
+
+.service-card__titles { display:flex; flex-direction: column; }
+.service-card__title { font-weight: 700; }
+.service-card__sub { font-size: 0.9rem; color: #556b78; }
+
+.service-card__chev { transition: transform .3s ease; }
+.service-card.is-open .service-card__chev { transform: rotate(180deg); }
+
+.service-card__body {
+  height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  opacity: 0;
+  background: #ffffff;
+  border-top: 1px solid #dce3ea;
+  transition: height .35s ease, opacity .25s ease, padding .25s ease;
+}
+.service-card.is-open .service-card__body {
+  opacity: 1;
+  padding-top: 12px;
+  padding-bottom: 16px;
 }
 
-/* SweetAlert stil */
-.swal2-popup {
-  background-color: #1a1a1a !important;
-  color: #eaf0f2 !important;
-  border-radius: 1rem !important;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) !important;
+.service-list { list-style:none; padding-left:0; margin:0; }
+.service-list li { position: relative; padding-left:1.25rem; margin:.4rem 0; }
+.service-list li::before {
+  content: "✔";
+  position:absolute; left:0; top:0.15rem;
+  color:#447486;
+  font-size:0.9rem;
+}
+/* Centriraj sve kartice u redu */
+.row.g-4 {
+  justify-content: center; /* centriraj kolone horizontalno */
 }
 
-.swal2-confirm {
-  background-color: #447486 !important;
-  border: none !important;
-  color: #fff !important;
-  border-radius: 50px !important;
+/* Centriraj sadržaj unutar kartice */
+.service-card__header {
+  display: flex;
+  flex-direction: column; /* vertikalno složi naslov i podnaslov */
+  align-items: center; /* centriraj horizontalno */
+  justify-content: center;
+  text-align: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 100%;
+  transition: background .3s ease;
 }
 
-.swal2-icon-success {
-  color: #2f6479 !important;
-}
-
-.swal2-icon-error {
-  color: #dc3545 !important;
-}
-
-@media (max-width: 576px) {
-  .navbar-brand svg {
-    width: 100px;
-    height: auto;
-  }
-}
-section {
-  scroll-margin-top: 80px; /* Visina tvoje navbar-e */
-}
-html {
-  scroll-behavior: smooth;
+/* Ako želiš da gumb u kartici bude centriran */
+.service-card__body a.btn {
+  display: block;
+  margin: 0 auto; /* centriraj horizontalno */
 }
