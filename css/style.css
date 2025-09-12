@@ -161,3 +161,11 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
     stroke: #000000; /* crna linija */
   }
 }
+@media (max-width: 576px) {
+  .service-card__title {
+    font-size: 1rem; /* manja veličina fonta za naslove na malim ekranima */
+  }
+  .service-card__sub {
+    font-size: 0.85rem; /* manja veličina fonta za podnaslove na malim ekranima */
+  }
+}
