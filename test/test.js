@@ -203,31 +203,62 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// test.js — automated functionality testing
 document.addEventListener('DOMContentLoaded', () => {
-  // Animate cards on scroll
-  const cards = document.querySelectorAll('.interactive-card');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  cards.forEach(card => io.observe(card));
 
-  // Toggle details info
-  const detailButtons = document.querySelectorAll('.details-btn');
-  detailButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const extraInfo = btn.nextElementSibling;
-      if(extraInfo.style.display === 'none') {
-        extraInfo.style.display = 'block';
-        btn.textContent = 'Hide';
-      } else {
-        extraInfo.style.display = 'none';
-        btn.textContent = 'Details';
-      }
+  console.log('===== Automated Functionality Test Started =====');
+
+  // 1️⃣ Test all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      console.log(`[Anchor Click] ${a.textContent.trim()} -> ${a.getAttribute('href')}`);
     });
   });
+
+  // 2️⃣ Test service cards accordion
+  const cards = document.querySelectorAll('.service-card[data-acc]');
+  cards.forEach((card, idx) => {
+    const header = card.querySelector('.service-card__header');
+    const title = card.querySelector('.service-card__title').textContent;
+    const body = card.querySelector('.service-card__body');
+
+    // Log click and check if body expands
+    header.addEventListener('click', () => {
+      const isOpen = card.classList.contains('is-open');
+      console.log(`[Service Card Click] "${title}" | isOpen: ${isOpen} | height: ${body.offsetHeight}`);
+    });
+
+    // Automated click after 500ms per card
+    setTimeout(() => {
+      console.log(`[Auto-Test] Clicking card "${title}"`);
+      header.click();
+    }, 500 * (idx + 1));
+  });
+
+  // 3️⃣ Test contact form
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      console.log('[Form Submit] Contact form submitted');
+    });
+  }
+
+  // 4️⃣ Test cookie banner buttons
+  const acceptBtn = document.getElementById('accept-cookies');
+  const declineBtn = document.getElementById('decline-cookies');
+
+  if(acceptBtn){
+    acceptBtn.addEventListener('click', () => {
+      console.log('[Cookie Banner] Accept clicked | localStorage:', localStorage.getItem('cookieConsent'));
+    });
+  }
+
+  if(declineBtn){
+    declineBtn.addEventListener('click', () => {
+      console.log('[Cookie Banner] Decline clicked | localStorage:', localStorage.getItem('cookieConsent'));
+    });
+  }
+
+  console.log('===== Automated Functionality Test Initialized =====');
 });

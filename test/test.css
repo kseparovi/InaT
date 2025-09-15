@@ -93,7 +93,7 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 .service-card__header:hover { background: rgba(68,116,134,.05); border-radius: 16px 16px 0 0; }
 
 .service-card__titles { display:flex; flex-direction: column; }
-.service-card__title { font-weight: 100; }
+.service-card__title { font-weight: 700; }
 .service-card__sub { font-size: 0.9rem; color: #556b78; }
 
 .service-card__chev { transition: transform .3s ease; }
@@ -117,7 +117,7 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 .service-list { list-style:none; padding-left:0; margin:0; }
 .service-list li { position: relative; padding-left:1.25rem; margin:.4rem 0; }
 .service-list li::before {
-
+  content: "✔";
   position:absolute; left:0; top:0.15rem;
   color:#447486;
   font-size:0.9rem;
@@ -171,144 +171,4 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 }
 .anchor-target {
   scroll-margin-top: 80px; /* test value for your navbar height */
-}
-
-
-
-/* Pricing Table */
-
-.pricing-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(12,32,39,.06);
-  padding: 1.5rem 1rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pricing-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 16px 36px rgba(12,32,37,.2);
-}
-
-.pricing-card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.pricing-card__title {
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 0.2rem;
-}
-
-.pricing-card__subtitle {
-  font-size: 0.85rem;
-  color: #556b78;
-  margin-bottom: 1rem;
-}
-
-.pricing-card__features {
-  list-style: none;
-  padding-left: 0;
-  margin: 0 0 1rem 0;
-}
-.pricing-card__features li {
-  margin: 0.4rem 0;
-  position: relative;
-}
-.pricing-card__features li::before {
-
-  position: absolute;
-  left: -1.2rem;
-  color: #447486;
-}
-
-.pricing-card__price {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 0.8rem 0;
-}
-
-.pricing-card a.btn {
-  display: block;
-  margin: 0.3rem auto;
-  width: 90%;
-}
-
-@media (max-width: 768px) {
-  .pricing-card {
-    margin-bottom: 2rem;
-  }
-}
-
-/* Existing styles remain, plus these */
-
-.interactive-card {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.interactive-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.details-btn {
-  display: block;
-  margin: 0.5rem auto;
-}
-
-.card-extra-info {
-  background: #f1f4f8;
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 0.85rem;
-}
-
-/* Hover effects */
-.pricing-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 18px 40px rgba(12,32,39,.18);
-}
-.about-section {
-  background-color: slategray;
-  box-shadow: 0 6px 20px rgba(12,32,39,.06);
-
-
-  color: white;              /* bela boja teksta */
-  padding: 6rem 0;           /* više prostora */
-  margin: 2rem 0;            /* razmak od drugih sekcija */
-}
-
-/* Global font za cijelu stranicu */
-body, h1, h2, h3, h4, h5, h6, p, ul, li, a, button {
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-}
-
-/* Dodatno možemo podešavati težinu i veličinu fonta po tipu elemenata */
-h1, h2, h3 {
-    font-weight: 700; /* naslovi su deblji */
-}
-
-p, li, a, button {
-    font-weight: 400; /* običan tekst i linkovi */
-    font-size: 1rem;
-}
-
-/* Opcionalno, za hero sekciju */
-.hero .container h1 {
-    font-weight: 700;
-}
-
-/* Za cijene i pakete */
-.pricing-card__title {
-    font-weight: 700;
-}
-
-.pricing-card__subtitle, .pricing-card__features li {
-    font-weight: 400;
 }

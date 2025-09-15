@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description"
+        content="InaT - Profesionalna web razvojna agencija koja nudi pakete za web stranice, e-commerce i prilagođena digitalna rješenja."/>
+  <meta name="keywords" content="InaT, web razvoj, web dizajn, e-commerce, paketi, cijene"/>
+  <meta name="author" content="InaT Web Agency"/>
+
+  <title>InaT | Cjenik paketa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/media/inat-logo.png" type="image/png">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="index-hr.html">
+      <svg class="d-block" style="width: 120px; height: auto;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg"
+           aria-label="InaT logo">
+        <defs>
+          <linearGradient id="inatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#eaf0f2"/>
+            <stop offset="50%" stop-color="#2f6479"/>
+            <stop offset="100%" stop-color="#eaf0f2"/>
+          </linearGradient>
+        </defs>
+        <text x="0" y="40" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="url(#inatGradient)">
+          InaT
+        </text>
+      </svg>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link text-light" href="index-hr.html#about">O nama</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="index-hr.html#services">Naše usluge</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="index-hr.html#contact">Kontakt</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#pricing">Cjenik</a></li>
+
+        <li class="nav-item ms-3">
+          <div class="form-check form-switch text-light">
+            <input class="form-check-input" type="checkbox" id="langSwitch" checked>
+            <label class="form-check-label" for="langSwitch">EN</label>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero d-flex align-items-center justify-content-center text-center text-white">
+  <video class="hero-bg-video" autoplay muted loop playsinline poster="media/hero-poster.jpg">
+    <source src="media/CG0021_MatrixBlueJP.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <h1 class="display-3 fw-bold mb-3">Naši paketi</h1>
+    <p class="lead mb-4">
+      Odaberite paket koji najbolje odgovara vašem poslovanju.
+      Bilo da tek započinjete ili želite unaprijediti postojeću web prisutnost,
+      naši paketi su prilagođeni svim potrebama i veličinama tvrtki.
+    </p>
+
+    <a href="#pricing" class="btn btn-primary btn-lg px-4 py-2">Pogledajte pakete</a>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" class="py-5 bg-light animate-on-scroll anchor-target">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+
+      <!-- START Paket -->
+      <div class="col-md-8 col-lg-4">
+        <article class="pricing-card interactive-card" data-acc>
+          <img src="media/package-start_1.png" class="img-fluid mb-3" alt="Start Paket">
+          <h3 class="pricing-card__title">START</h3>
+          <p class="pricing-card__subtitle">Osnovni web paket</p>
+          <ul class="pricing-card__features">
+            <li>Izrada web stranice</li>
+            <li>Mini SEO</li>
+            <li>Web dizajn</li>
+            <li>Domena & Hosting</li>
+          </ul>
+          <p class="pricing-card__price">€600,00</p>
+          <button class="btn btn-sm btn-primary details-btn">Detalji</button>
+          <div class="card-extra-info" style="display:none;">
+            <p>Ovaj paket je idealan za male tvrtke ili landing stranice. Uključuje postavljanje i osnovni SEO.</p>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- BASIC Paket -->
+      <div class="col-md-8 col-lg-4">
+        <article class="pricing-card interactive-card" data-acc>
+          <img src="media/package-start.png" class="img-fluid mb-3" alt="Basic Paket">
+          <h3 class="pricing-card__title">BASIC</h3>
+          <p class="pricing-card__subtitle">Standardni web paket</p>
+          <ul class="pricing-card__features">
+            <li>Izrada web stranice</li>
+            <li>On-site SEO</li>
+            <li>CMS & Web dizajn</li>
+            <li>Domena & Hosting</li>
+          </ul>
+          <p class="pricing-card__price">€1000,00</p>
+          <button class="btn btn-sm btn-primary details-btn">Detalji</button>
+          <div class="card-extra-info" style="display:none;">
+            <p>Idealan za male i srednje tvrtke. Uključuje CMS integraciju i napredne SEO funkcionalnosti.</p>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- IDEAL Paket -->
+      <div class="col-md-8 col-lg-4">
+        <article class="pricing-card interactive-card" data-acc>
+          <img src="media/package-start_2.png" class="img-fluid mb-3" alt="Ideal Paket">
+          <h3 class="pricing-card__title">IDEAL</h3>
+          <p class="pricing-card__subtitle">Napredni web paket</p>
+          <ul class="pricing-card__features">
+            <li>Izrada web stranice</li>
+            <li>On-site SEO</li>
+            <li>CMS & Web dizajn</li>
+            <li>Mali webshop</li>
+            <li>Domena & Hosting</li>
+          </ul>
+          <p class="pricing-card__price">€3000,00</p>
+          <button class="btn btn-sm btn-primary details-btn">Detalji</button>
+          <div class="card-extra-info" style="display:none;">
+            <p>Uključuje postavljanje malog webshopa. Idealan za e-commerce startupe i rastuće tvrtke.</p>
+          </div>
+
+        </article>
+      </div>
+      <a href="index.html#contact" class="btn btn-primary btn-lg">Kontakt</a>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-4">Trebate prilagođeno rješenje?</h2>
+      <p class="mb-4">Ako naši paketi ne odgovaraju vašim potrebama, rado ćemo kreirati rješenje po mjeri. Kontaktirajte
+        nas kako bismo razgovarali o vašim zahtjevima i pripremili personaliziranu ponudu.</p>
+      <a href="index-hr.html#contact" class="btn btn-primary btn-lg">Kontaktirajte nas</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-4 bg-light">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 InaT. Sva prava pridržana. <a href="privacy_policy.html" class="ms-2 text-muted">Politika
+        privatnosti</a></p>
+    </div>
+  </footer>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner d-none">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <span>Koristimo kolačiće za poboljšanje iskustva. Želite li omogućiti analitiku?</span>
+      <div class="d-flex gap-2">
+        <button id="decline-cookies" class="btn btn-sm">Odbij</button>
+        <button id="accept-cookies" class="btn btn-sm">Prihvati</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
+

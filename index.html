@@ -67,20 +67,21 @@
 <!-- HEADER -->
 <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
   <div class="container">
-<a class="navbar-brand fw-semibold" href="#">
-  <svg class="d-block" style="width: 120px; height: auto;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="InaT logo">
-    <defs>
-      <linearGradient id="inatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#eaf0f2"/>
-        <stop offset="50%" stop-color="#2f6479"/>
-        <stop offset="100%" stop-color="#eaf0f2"/>
-      </linearGradient>
-    </defs>
-    <text x="0" y="40" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="url(#inatGradient)">
-      InaT
-    </text>
-  </svg>
-</a>
+    <a class="navbar-brand fw-semibold" href="#">
+      <svg class="d-block" style="width: 120px; height: auto;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg"
+           aria-label="InaT logo">
+        <defs>
+          <linearGradient id="inatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#eaf0f2"/>
+            <stop offset="50%" stop-color="#2f6479"/>
+            <stop offset="100%" stop-color="#eaf0f2"/>
+          </linearGradient>
+        </defs>
+        <text x="0" y="40" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="url(#inatGradient)">
+          InaT
+        </text>
+      </svg>
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-label="Open navigation">
@@ -91,6 +92,7 @@
         <li class="nav-item"><a class="nav-link text-light" href="#about">About Us</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="#services">Our Services</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="pricing.html">Pricing</a></li> <!-- Added link -->
         <li class="nav-item ms-3">
           <div class="form-check form-switch text-light">
             <input class="form-check-input" type="checkbox" id="langSwitch" checked>
@@ -99,6 +101,7 @@
         </li>
       </ul>
     </nav>
+
   </div>
 </header>
 
@@ -110,17 +113,19 @@
   <div class="hero-overlay"></div>
   <div class="container">
     <h1 class="display-3 fw-bold mb-3">We build solutions that drive your business forward.</h1>
-    <p class="lead mb-4">From concept to implementation — professional web development and tailored digital platforms.</p>
+    <p class="lead mb-4">From concept to implementation — professional web development and tailored digital
+      platforms.</p>
     <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-2">Contact Us</a>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-5 bg-light animate-on-scroll anchor-target">
+<section id="about" class="about-section py-5 animate-on-scroll anchor-target">
   <div class="container">
     <h2 class="section-title text-center mb-4">About Us</h2>
     <p class="text-center mx-auto" style="max-width: 800px;">
-      InaT is a modern digital agency specializing in web development, professional websites, e-commerce, and custom digital solutions.
+      InaT is a modern digital agency specializing in web development, professional websites, e-commerce, and custom
+      digital solutions.
       We help companies of all sizes build functional, scalable, and visually attractive online presence.
       Our approach combines technical expertise and user-focused design to deliver measurable results.
     </p>
@@ -139,7 +144,7 @@
           <button class="service-card__header" aria-expanded="false" aria-controls="svc-web-panel">
             <div class="service-card__titles">
               <span class="service-card__title">Website Development</span>
-              <span class="service-card__sub">Fast, SEO-ready, responsive</span>
+
             </div>
             <svg class="service-card__chev" width="18" height="18" viewBox="0 0 16 16">
               <path d="M1.5 5.5l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -164,7 +169,7 @@
           <button class="service-card__header" aria-expanded="false" aria-controls="svc-ecom-panel">
             <div class="service-card__titles">
               <span class="service-card__title">E-commerce</span>
-              <span class="service-card__sub">Scalable, secure, conversion-focused</span>
+
             </div>
             <svg class="service-card__chev" width="18" height="18" viewBox="0 0 16 16">
               <path d="M1.5 5.5l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -188,7 +193,7 @@
           <button class="service-card__header" aria-expanded="false" aria-controls="svc-custom-panel">
             <div class="service-card__titles">
               <span class="service-card__title">Custom Solutions</span>
-              <span class="service-card__sub">Tailored applications</span>
+
             </div>
             <svg class="service-card__chev" width="18" height="18" viewBox="0 0 16 16">
               <path d="M1.5 5.5l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -216,9 +221,12 @@
     <h2 class="section-title text-center mb-4">Contact</h2>
     <div class="text-center mb-4">
       <h5 class="fw-bold">Schedule a meeting with us</h5>
-      <p class="mb-1">Phone: <a href="tel:+385955170512" class="text-white text-decoration-underline">+385 95 517 0512 - Kristina Šeparović</a></p>
-      <p class="mb-0">Address: <a href="https://www.google.com/maps?q=Admirala+Jakova+Šubića+od+Cezana+25e,+Zadar" target="_blank"
-          class="text-white text-decoration-underline">Admirala Jakova Šubića od Cezana 25e, 23000 Zadar</a></p>
+      <p class="mb-1">Phone: <a href="tel:+385955170512" class="text-white text-decoration-underline">+385 95 517 0512 -
+        Kristina Šeparović</a></p>
+      <p class="mb-0">Address: <a href="https://www.google.com/maps?q=Admirala+Jakova+Šubića+od+Cezana+25e,+Zadar"
+                                  target="_blank"
+                                  class="text-white text-decoration-underline">Admirala Jakova Šubića od Cezana 25e,
+        23000 Zadar</a></p>
     </div>
     <form id="contactForm" method="POST" class="mx-auto" style="max-width: 600px;">
       <div class="text-center mb-4"><h5 class="fw-bold">Contact us via email</h5></div>
@@ -249,7 +257,8 @@
 <!-- FOOTER -->
 <footer class="text-center py-4 bg-light">
   <div class="container">
-    <p class="mb-0">&copy; 2025 InaT. All rights reserved. <a href="privacy_policy.html" class="ms-2 text-muted">Privacy Policy</a></p>
+    <p class="mb-0">&copy; 2025 InaT. All rights reserved. <a href="politika_privatnost_eng.html"
+                                                              class="ms-2 text-muted">Policy privacy</a></p>
   </div>
 </footer>
 
