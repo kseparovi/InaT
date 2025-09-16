@@ -25,6 +25,7 @@ body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
   min-height: 90vh;
   color: white;
   overflow: hidden;
+  padding: 3rem 0; /* Added padding for small screens */
 }
 .hero-bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index:0; }
 .hero-overlay { position: absolute; inset: 0; width:100%; height:100%; background: rgba(15,32,39,.75); z-index:0; }
@@ -37,12 +38,14 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 #langSwitch, .form-check-label[for="langSwitch"] { accent-color: #447486; color: #447486; }
 
 @media (max-width: 768px){
-  h1.display-3 { font-size: 2rem; }
-  .hero p.lead { font-size: 1rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero p.lead { font-size: 1.2rem; }
 }
 
 @media (max-width: 576px){
   .section-title { font-size: 1.5rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero p.lead { font-size: 1rem; }
 }
 
 /* Cookie banner */
@@ -117,21 +120,19 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 .service-list { list-style:none; padding-left:0; margin:0; }
 .service-list li { position: relative; padding-left:1.25rem; margin:.4rem 0; }
 .service-list li::before {
-
   position:absolute; left:0; top:0.15rem;
   color:#447486;
   font-size:0.9rem;
 }
-/* Centriraj sve kartice u redu */
+
 .row.g-4 {
-  justify-content: center; /* centriraj kolone horizontalno */
+  justify-content: center;
 }
 
-/* Centriraj sadržaj unutar kartice */
 .service-card__header {
   display: flex;
-  flex-direction: column; /* vertikalno složi naslov i podnaslov */
-  align-items: center; /* centriraj horizontalno */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
   padding: 18px 20px;
@@ -144,39 +145,34 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
   transition: background .3s ease;
 }
 
-/* Ako želiš da gumb u kartici bude centriran */
 .service-card__body a.btn {
   display: block;
-  margin: 0 auto; /* centriraj horizontalno */
+  margin: 0 auto;
 }
+
 @media (max-width: 768px) {
-  /* Naslovi kartica i podnaslovi tamne boje */
-  .service-card__title,
-  .service-card__sub {
-    color: #000000; /* crna boja */
+  .service-card__title, .service-card__sub {
+    color: #000000;
   }
 
-  /* Chevron (strelica) tamna boja */
   .service-card__chev path {
-    stroke: #000000; /* crna linija */
+    stroke: #000000;
   }
-}
-@media (max-width: 576px) {
+
   .service-card__title {
-    font-size: 1rem; /* manja veličina fonta za naslove na malim ekranima */
+    font-size: 1rem;
   }
   .service-card__sub {
-    font-size: 0.85rem; /* manja veličina fonta za podnaslove na malim ekranima */
+    font-size: 0.85rem;
   }
 }
-.anchor-target {
-  scroll-margin-top: 80px; /* test value for your navbar height */
+
+@media (max-width: 576px) {
+  .service-card__title { font-size: 0.9rem; }
+  .service-card__sub { font-size: 0.75rem; }
 }
-
-
 
 /* Pricing Table */
-
 .pricing-card {
   background: #fff;
   border-radius: 16px;
@@ -192,7 +188,7 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 }
 
 .pricing-card img {
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -214,12 +210,13 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
   padding-left: 0;
   margin: 0 0 1rem 0;
 }
+
 .pricing-card__features li {
   margin: 0.4rem 0;
   position: relative;
 }
-.pricing-card__features li::before {
 
+.pricing-card__features li::before {
   position: absolute;
   left: -1.2rem;
   color: #447486;
@@ -239,12 +236,23 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
 
 @media (max-width: 768px) {
   .pricing-card {
+    width: 100%;
+    padding: 1rem;
     margin-bottom: 2rem;
   }
 }
 
-/* Existing styles remain, plus these */
+@media (max-width: 576px) {
+  .pricing-card__title {
+    font-size: 1.1rem;
+  }
 
+  .pricing-card__subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Interactive Card Animation */
 .interactive-card {
   opacity: 0;
   transform: translateY(30px);
@@ -274,39 +282,34 @@ footer { background-color: #f8f9fa; padding: 40px 0; }
   transform: scale(1.03);
   box-shadow: 0 18px 40px rgba(12,32,39,.18);
 }
+
 .about-section {
   background-color: slategray;
   box-shadow: 0 6px 20px rgba(12,32,39,.06);
-
-
-  color: white;              /* bela boja teksta */
-  padding: 6rem 0;           /* više prostora */
-  margin: 2rem 0;            /* razmak od drugih sekcija */
+  color: white;
+  padding: 6rem 0;
+  margin: 2rem 0;
 }
 
-/* Global font za cijelu stranicu */
 body, h1, h2, h3, h4, h5, h6, p, ul, li, a, button {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Dodatno možemo podešavati težinu i veličinu fonta po tipu elemenata */
 h1, h2, h3 {
-    font-weight: 700; /* naslovi su deblji */
+    font-weight: 700;
 }
 
 p, li, a, button {
-    font-weight: 400; /* običan tekst i linkovi */
+    font-weight: 400;
     font-size: 1rem;
 }
 
-/* Opcionalno, za hero sekciju */
 .hero .container h1 {
     font-weight: 700;
 }
 
-/* Za cijene i pakete */
 .pricing-card__title {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .pricing-card__subtitle, .pricing-card__features li {
