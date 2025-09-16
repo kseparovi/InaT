@@ -198,25 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  document.body.classList.add('loaded');
-  console.log('InaT site ready.');
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Animate cards on scroll
-  const cards = document.querySelectorAll('.interactive-card');
-  const io = new IntersectionObserver(entries => {
+  // ===== Animate cards on scroll =====
+  const cardsToAnimate = document.querySelectorAll('.interactive-card');
+  const ioCards = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
         entry.target.classList.add('visible');
-        io.unobserve(entry.target);
+        ioCards.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
-  cards.forEach(card => io.observe(card));
+  cardsToAnimate.forEach(card => ioCards.observe(card));
 
-  // Toggle details info
+  // ===== Toggle details info in pricing cards =====
   const detailButtons = document.querySelectorAll('.details-btn');
   detailButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -230,4 +224,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  document.body.classList.add('loaded');
+  console.log('InaT site ready.');
+});
+document.addEventListener('DOMContentLoaded', () => {
+  // Hide the loading screen once the page is fully loaded
+  const loadingScreen = document.getElementById('loadingScreen');
+
+  // Wait for the page to be fully loaded and then hide the loading screen
+  window.addEventListener('load', () => {
+    if (loadingScreen) {
+      loadingScreen.style.display = 'none'; // Hide the loading screen
+    }
+  });
+
+  console.log('Page Loaded and Loading Screen Hidden');
 });
