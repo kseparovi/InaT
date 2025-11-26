@@ -75,21 +75,26 @@
 <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="#">
-      <svg class="d-block" style="width: 120px; height: auto;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg"
-           aria-label="InaT logo">
+      <svg class="d-block" style="width: 120px; height: auto;" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="InaT logo">
         <defs>
-          <linearGradient id="inatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#eaf0f2"/>
-            <stop offset="50%" stop-color="#2f6479"/>
-            <stop offset="100%" stop-color="#eaf0f2"/>
+          <linearGradient id="darkBrandGrad" x1="20%" y1="40%" x2="100%" y2="40%">
+            <stop offset="0%" stop-color="#788978"/>
+            <stop offset="50%" stop-color="#3D4A55"/>
+            <stop offset="100%" stop-color="#788978"/>
           </linearGradient>
         </defs>
-        <text x="0" y="40" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="url(#inatGradient)">
-          InaT
+
+        <rect width="100%" height="100%" fill="none"/>
+
+        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
+              font-family="'JetBrains Mono', 'Fira Code', monospace"
+              font-size="200"
+              fill="url(#darkBrandGrad)">
+          &lt;/InaT&gt;
         </text>
       </svg>
     </a>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-label="Open navigation">
       <span class="navbar-toggler-icon"></span>

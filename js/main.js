@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Language toggle (EN <-> HR) =====
   const langSwitcher = document.getElementById('langSwitch');
   if (langSwitcher) {
-    const isHR = window.location.pathname.includes('index-hr.html');
-    langSwitcher.checked = !isHR;
+    const isEN = window.location.pathname.includes('index-hr.html');
+    langSwitcher.checked = !isEN;
     langSwitcher.addEventListener('change', () => {
       window.location.href = langSwitcher.checked ? 'index.html' : 'index-hr.html';
     });
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fetch('https://formspree.io/f/xjkrwlzj', {
         method: 'POST',
         body: formData,
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Accept': 'application/json' } // Ensure JSON response in all cases
       }).then(async res => {
         if (res.ok) {
           contactForm.reset();
